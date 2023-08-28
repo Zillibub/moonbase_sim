@@ -6,9 +6,10 @@ from moonbase_sim.message import Message
 
 class MoonBase:
     """
-    Class representing the moonbase.
+    Class representing the moon base.
     """
-    def __init__(self):
+    def __init__(self, moon_base_id: str):
+        self.moon_base_id = moon_base_id
         self.sensors = []
         self.ground_samples = []
         self.message_log = []

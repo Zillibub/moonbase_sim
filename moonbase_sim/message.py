@@ -7,7 +7,6 @@ class Message:
     """
     Class representing a message sent or received from Earth.
     """
-    message_id: str
     content: str
     sent_at: str = datetime.datetime.now().isoformat()
     received_at: str = None
@@ -31,7 +30,6 @@ class Message:
         Returns the message.
         """
         return {
-            'message_id': self.message_id,
             'content': self.content,
             'sent_at': self.sent_at,
             'received_at': self.received_at
