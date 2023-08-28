@@ -1,0 +1,34 @@
+{
+    "sensors": [
+        {
+            "sensor_id": "TEMP-001",
+            "sensor_metadata": {
+                "measured_value": "Temperature",
+                "units": "Celsius",
+                "type": "Thermometer",
+                "calibration_date": "2021-01-01",
+                "description": "Measures the temperature"
+            },
+            "data": []
+        },
+        {
+            "sensor_id": "MAG-001",
+            "sensor_metadata": {
+                "measured_value": "Magnetic Field",
+                "units": "Tesla",
+                "type": "Magnetometer",
+                "calibration_date": "2021-01-01",
+                "description": "Measures the magnetic field"
+            },
+            "data": []
+        }
+    ],
+    "ground_samples": [],
+    "message_log": [
+        {
+            "content": "Sensors added: Temperature Sensor, Magnetometer",
+            "sent_at": "2023-08-28T13:54:59.697088",
+            "received_at": null
+        }
+    ]
+}

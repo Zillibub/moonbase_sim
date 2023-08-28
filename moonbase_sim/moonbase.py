@@ -61,12 +61,12 @@ class MoonBase:
         :return:
         """
         state = {
-            'sensors': [sensor.__dict__ for sensor in self.sensors],
+            'sensors': [sensor.to_json() for sensor in self.sensors],
             'ground_samples': [sample.__dict__ for sample in self.ground_samples],
             'message_log': [message.__dict__ for message in self.message_log]
         }
         with open(filename, 'w') as f:
-            json.dump(state, f)
+            json.dump(state, f, indent=4)
 
     def load_state(self, filename):
         """

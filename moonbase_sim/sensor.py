@@ -36,3 +36,10 @@ class Sensor:
         Returns the collected data.
         """
         return self.data
+
+    def to_json(self):
+        return {
+            'sensor_id': self.sensor_id,
+            'sensor_metadata': self.sensor_metadata.dict(),
+            'data': self.data
+        }
