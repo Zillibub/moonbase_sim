@@ -1,11 +1,16 @@
+import datetime
+from dataclasses import dataclass
+
+
 @dataclass
 class Sensor:
     """
     Class representing a sensor in the moonbase.
     """
-    sensor_id: str
-    sensor_type: str
-    data: List[dict] = []
+    def __init__(self, sensor_id, sensor_type):
+        self.sensor_id = sensor_id
+        self.sensor_type = sensor_type
+        self.data = []
 
     def collect_data(self, data):
         """

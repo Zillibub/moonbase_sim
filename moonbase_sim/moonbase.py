@@ -1,3 +1,4 @@
+import json
 
 
 class MoonBase:
@@ -8,6 +9,7 @@ class MoonBase:
         self.sensors = []
         self.ground_samples = []
         self.message_log = []
+        self.is_landed = False
 
     def add_sensor(self, sensor):
         """
