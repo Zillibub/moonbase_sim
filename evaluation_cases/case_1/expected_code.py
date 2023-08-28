@@ -2,7 +2,7 @@ from moonbase_sim.sensor import Sensor, SensorMetadata
 from moonbase_sim.moonbase import MoonBase
 from moonbase_sim.message import Message
 
-moonbase = MoonBase("base-001")
+moonbase = MoonBase("BASE-001")
 
 sensor1 = Sensor(
     sensor_id="TEMP-001",

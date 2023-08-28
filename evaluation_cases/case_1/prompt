@@ -1,7 +1,7 @@
-Create a moon base and add two sensors with it.
+Create a moon base with id "BASE-001" and add two sensors with it.
 Sensors description:
 1. Temperature Sensor, sensor_id: TEMP-001, measured_value: Temperature, units: Celsius, type: Thermometer, calibration_date: 2021-01-01, description: Measures the temperature
 2. Magnetometer, sensor_id: MAG-001, measured_value: Magnetic Field, units: Tesla, type: Magnetometer, calibration_date: 2021-01-01, description: Measures the magnetic field
 
-After sensors are created, send a message with the following text:
+After sensors are created, send a message to earth with the following text:
 Sensors added: Temperature Sensor, Magnetometer
