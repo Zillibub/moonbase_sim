@@ -1,4 +1,5 @@
 import json
+from typing import Tuple
 from moonbase_sim.sensor import Sensor
 from moonbase_sim.ground_sample import GroundSample
 from moonbase_sim.message import Message
@@ -13,7 +14,9 @@ class MoonBase:
         self.sensors = []
         self.ground_samples = []
         self.message_log = []
+
         self.is_landed = False
+        self.landing_location = None
 
     def add_sensor(self, sensor):
         """
@@ -26,6 +29,15 @@ class MoonBase:
             raise Exception('Cannot add sensors after landing')
 
         self.sensors.append(sensor)
+
+    def land(self, location: Tuple[int, int]):
+        """
+        Lands the moonbase at the specified location.
+        :param location:
+        :return:
+        """
+        self.is_landed = True
+        self.landing_location = location
 
     def collect_ground_sample(self, sample):
         """
@@ -63,7 +75,9 @@ class MoonBase:
         state = {
             'sensors': [sensor.to_json() for sensor in self.sensors],
             'ground_samples': [sample.__dict__ for sample in self.ground_samples],
-            'message_log': [message.__dict__ for message in self.message_log]
+            'message_log': [message.__dict__ for message in self.message_log],
+            'is_landed': self.is_landed,
+            'landing_location': self.landing_location if self.landing_location else ''
         }
         with open(filename, 'w') as f:
             json.dump(state, f, indent=4)
@@ -79,3 +93,5 @@ class MoonBase:
         self.sensors = [Sensor.from_json(sensor) for sensor in state['sensors']]
         self.ground_samples = [GroundSample(**sample) for sample in state['ground_samples']]
         self.message_log = [Message(**message) for message in state['message_log']]
+        self.is_landed = state['is_landed']
+        self.landing_location = state['landing_location'] if state['landing_location'] else None
