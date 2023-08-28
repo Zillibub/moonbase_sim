@@ -1,14 +1,23 @@
+@dataclass
 class Sensor:
-    def __init__(self, id, type, metadata):
-        """
-        Initialize a sensor with an id, type and metadata.
-        """
-        self.id = id
-        self.type = type
-        self.metadata = metadata
+    """
+    Class representing a sensor in the moonbase.
+    """
+    sensor_id: str
+    sensor_type: str
+    data: List[dict] = []
 
-    def collect_data(self):
+    def collect_data(self, data):
         """
-        Collect data from the sensor. This will need to be implemented.
+        Collects data from the sensor.
         """
-        pass
+        self.data.append({
+            'timestamp': datetime.datetime.now().isoformat(),
+            'data': data
+        })
+
+    def get_data(self):
+        """
+        Returns the collected data.
+        """
+        return self.data

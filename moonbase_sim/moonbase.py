@@ -1,49 +1,56 @@
-import json
 
 
-class LunarBase:
+class MoonBase:
+    """
+    Class representing the moonbase.
+    """
     def __init__(self):
-        """
-        Initialize a lunar base with empty lists of sensors and ground samples.
-        """
         self.sensors = []
         self.ground_samples = []
+        self.message_log = []
 
     def add_sensor(self, sensor):
         """
-        Add a sensor to the lunar base.
+        Adds a sensor to the moonbase.
         """
         self.sensors.append(sensor)
 
-    def collect_ground_sample(self, ground_sample):
+    def collect_ground_sample(self, sample):
         """
-        Collect a ground sample and add it to the lunar base.
+        Collects a ground sample.
         """
-        self.ground_samples.append(ground_sample)
+        self.ground_samples.append(sample)
 
     def send_message(self, message):
         """
-        Send a message to Earth. This will need to be implemented.
+        Sends a message to Earth.
         """
-        pass
+        self.message_log.append(message)
 
-    def receive_message(self):
+    def receive_message(self, message):
         """
-        Receive a message from Earth. This will need to be implemented.
+        Receives a message from Earth.
         """
-        pass
+        self.message_log.append(message)
 
-    def save(self, filename):
+    def save_state(self, filename):
         """
-        Save the state of the lunar base to a file.
+        Saves the state of the moonbase to a file.
         """
+        state = {
+            'sensors': [sensor.__dict__ for sensor in self.sensors],
+            'ground_samples': [sample.__dict__ for sample in self.ground_samples],
+            'message_log': [message.__dict__ for message in self.message_log]
+        }
         with open(filename, 'w') as f:
-            json.dump(self.__dict__, f)
+            json.dump(state, f)
 
-    def load(self, filename):
+    def load_state(self, filename):
         """
-        Load the state of the lunar base from a file.
+        Loads the state of the moonbase from a file.
         """
         with open(filename, 'r') as f:
-            data = json.load(f)
-        self.__dict__.update(data)
+            state = json.load(f)
+        self.sensors = [Sensor(**sensor) for sensor in state['sensors']]
+        self.ground_samples = [GroundSample(**sample) for sample in state['ground_samples']]
+        self.message_log = [Message(**message) for message in state['message_log']]
