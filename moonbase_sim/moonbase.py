@@ -76,6 +76,6 @@ class MoonBase:
         """
         with open(filename, 'r') as f:
             state = json.load(f)
-        self.sensors = [Sensor(**sensor) for sensor in state['sensors']]
+        self.sensors = [Sensor.from_json(sensor) for sensor in state['sensors']]
         self.ground_samples = [GroundSample(**sample) for sample in state['ground_samples']]
         self.message_log = [Message(**message) for message in state['message_log']]

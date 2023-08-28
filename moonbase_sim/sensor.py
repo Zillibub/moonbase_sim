@@ -17,10 +17,10 @@ class Sensor:
     """
     Class representing a sensor in the moonbase.
     """
-    def __init__(self, sensor_id, sensor_metadata: SensorMetadata):
+    def __init__(self, sensor_id, sensor_metadata: SensorMetadata, data=None):
         self.sensor_id = sensor_id
         self.sensor_metadata = sensor_metadata
-        self.data = []
+        self.data = data or []
 
     def collect_data(self, value):
         """
@@ -36,6 +36,14 @@ class Sensor:
         Returns the collected data.
         """
         return self.data
+
+    @classmethod
+    def from_json(cls, json):
+        return cls(
+            sensor_id=json['sensor_id'],
+            sensor_metadata=SensorMetadata(**json['sensor_metadata']),
+            data=json['data']
+        )
 
     def to_json(self):
         return {

@@ -40,7 +40,7 @@ def main():
         )
         moonbase.add_sensor(sensor)
 
-    moonbase.save_state("inital_state.json")
+    moonbase.save_state("initial_state.json")
 
 
 if __name__ == "__main__":
