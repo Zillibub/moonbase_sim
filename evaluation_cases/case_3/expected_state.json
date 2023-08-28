@@ -1,0 +1,232 @@
+{
+    "sensors": [
+        {
+            "sensor_id": "TEMP-001",
+            "sensor_metadata": {
+                "measured_value": "Temperature",
+                "units": "Celsius",
+                "type": "Thermometer",
+                "calibration_date": "2021-02-17",
+                "description": "Temperature Sensor 1"
+            },
+            "data": []
+        },
+        {
+            "sensor_id": "TEMP-002",
+            "sensor_metadata": {
+                "measured_value": "Temperature",
+                "units": "Celsius",
+                "type": "Thermometer",
+                "calibration_date": "2021-07-15",
+                "description": "Temperature Sensor 2"
+            },
+            "data": []
+        },
+        {
+            "sensor_id": "TEMP-003",
+            "sensor_metadata": {
+                "measured_value": "Temperature",
+                "units": "Celsius",
+                "type": "Thermometer",
+                "calibration_date": "2021-09-11",
+                "description": "Temperature Sensor 3"
+            },
+            "data": []
+        },
+        {
+            "sensor_id": "TEMP-004",
+            "sensor_metadata": {
+                "measured_value": "Temperature",
+                "units": "Celsius",
+                "type": "Thermometer",
+                "calibration_date": "2021-05-02",
+                "description": "Temperature Sensor 4"
+            },
+            "data": []
+        },
+        {
+            "sensor_id": "TEMP-005",
+            "sensor_metadata": {
+                "measured_value": "Temperature",
+                "units": "Celsius",
+                "type": "Thermometer",
+                "calibration_date": "2021-03-29",
+                "description": "Temperature Sensor 5"
+            },
+            "data": []
+        },
+        {
+            "sensor_id": "TEMP-006",
+            "sensor_metadata": {
+                "measured_value": "Temperature",
+                "units": "Celsius",
+                "type": "Thermometer",
+                "calibration_date": "2021-04-07",
+                "description": "Temperature Sensor 6"
+            },
+            "data": []
+        },
+        {
+            "sensor_id": "TEMP-007",
+            "sensor_metadata": {
+                "measured_value": "Temperature",
+                "units": "Celsius",
+                "type": "Thermometer",
+                "calibration_date": "2021-01-23",
+                "description": "Temperature Sensor 7"
+            },
+            "data": []
+        },
+        {
+            "sensor_id": "TEMP-008",
+            "sensor_metadata": {
+                "measured_value": "Temperature",
+                "units": "Celsius",
+                "type": "Thermometer",
+                "calibration_date": "2021-11-01",
+                "description": "Temperature Sensor 8"
+            },
+            "data": []
+        },
+        {
+            "sensor_id": "TEMP-009",
+            "sensor_metadata": {
+                "measured_value": "Temperature",
+                "units": "Celsius",
+                "type": "Thermometer",
+                "calibration_date": "2021-08-16",
+                "description": "Temperature Sensor 9"
+            },
+            "data": []
+        },
+        {
+            "sensor_id": "TEMP-010",
+            "sensor_metadata": {
+                "measured_value": "Temperature",
+                "units": "Celsius",
+                "type": "Thermometer",
+                "calibration_date": "2021-11-09",
+                "description": "Temperature Sensor 10"
+            },
+            "data": []
+        },
+        {
+            "sensor_id": "MAG-001",
+            "sensor_metadata": {
+                "measured_value": "Magnetic Field",
+                "units": "Tesla",
+                "type": "Magnetometer",
+                "calibration_date": "2021-07-22",
+                "description": "Magnetometer Sensor 1"
+            },
+            "data": []
+        },
+        {
+            "sensor_id": "MAG-002",
+            "sensor_metadata": {
+                "measured_value": "Magnetic Field",
+                "units": "Tesla",
+                "type": "Magnetometer",
+                "calibration_date": "2021-04-08",
+                "description": "Magnetometer Sensor 2"
+            },
+            "data": []
+        },
+        {
+            "sensor_id": "MAG-003",
+            "sensor_metadata": {
+                "measured_value": "Magnetic Field",
+                "units": "Tesla",
+                "type": "Magnetometer",
+                "calibration_date": "2021-02-03",
+                "description": "Magnetometer Sensor 3"
+            },
+            "data": []
+        },
+        {
+            "sensor_id": "MAG-004",
+            "sensor_metadata": {
+                "measured_value": "Magnetic Field",
+                "units": "Tesla",
+                "type": "Magnetometer",
+                "calibration_date": "2021-03-12",
+                "description": "Magnetometer Sensor 4"
+            },
+            "data": []
+        },
+        {
+            "sensor_id": "MAG-005",
+            "sensor_metadata": {
+                "measured_value": "Magnetic Field",
+                "units": "Tesla",
+                "type": "Magnetometer",
+                "calibration_date": "2021-08-24",
+                "description": "Magnetometer Sensor 5"
+            },
+            "data": []
+        },
+        {
+            "sensor_id": "MAG-006",
+            "sensor_metadata": {
+                "measured_value": "Magnetic Field",
+                "units": "Tesla",
+                "type": "Magnetometer",
+                "calibration_date": "2021-11-26",
+                "description": "Magnetometer Sensor 6"
+            },
+            "data": []
+        },
+        {
+            "sensor_id": "MAG-007",
+            "sensor_metadata": {
+                "measured_value": "Magnetic Field",
+                "units": "Tesla",
+                "type": "Magnetometer",
+                "calibration_date": "2021-09-13",
+                "description": "Magnetometer Sensor 7"
+            },
+            "data": []
+        },
+        {
+            "sensor_id": "MAG-008",
+            "sensor_metadata": {
+                "measured_value": "Magnetic Field",
+                "units": "Tesla",
+                "type": "Magnetometer",
+                "calibration_date": "2021-05-19",
+                "description": "Magnetometer Sensor 8"
+            },
+            "data": []
+        },
+        {
+            "sensor_id": "MAG-009",
+            "sensor_metadata": {
+                "measured_value": "Magnetic Field",
+                "units": "Tesla",
+                "type": "Magnetometer",
+                "calibration_date": "2021-10-06",
+                "description": "Magnetometer Sensor 9"
+            },
+            "data": []
+        },
+        {
+            "sensor_id": "MAG-010",
+            "sensor_metadata": {
+                "measured_value": "Magnetic Field",
+                "units": "Tesla",
+                "type": "Magnetometer",
+                "calibration_date": "2021-12-21",
+                "description": "Magnetometer Sensor 10"
+            },
+            "data": []
+        }
+    ],
+    "ground_samples": [],
+    "message_log": [
+        {
+            "content": "['TEMP-002', 'TEMP-003', 'TEMP-008', 'TEMP-009', 'TEMP-010', 'MAG-001', 'MAG-005', 'MAG-006', 'MAG-007', 'MAG-009', 'MAG-010']",
+            "sent_at": "2023-08-28T14:59:45.816303",
+            "received_at": null
+        }
+    ]
+}
