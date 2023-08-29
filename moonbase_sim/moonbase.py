@@ -3,6 +3,7 @@ from typing import Tuple
 from moonbase_sim.sensor import Sensor
 from moonbase_sim.ground_sample import GroundSample
 from moonbase_sim.message import Message
+import pydoc
 
 
 class MoonBase:

@@ -5,3 +5,5 @@ Sensors description:
 
 After sensors are created, send a message to earth with the following text:
 Sensors added: Temperature Sensor, Magnetometer
+
+After that, save the moon base to a file with path {}

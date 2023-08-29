@@ -7,3 +7,4 @@ The second 10 sensors should have a unique ID (MAG-001 to MAG-010), and metadata
 the type of measurement (Magnetic Field), units (Tesla), type of sensor (Magnetometer),
 a randomly generated calibration date within the year 2021, and a description.
 
+After that, save the moon base to a file with path {}
