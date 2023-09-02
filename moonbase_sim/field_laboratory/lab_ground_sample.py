@@ -15,5 +15,6 @@ class LabGroundSample:
 
     volume: float = None
     density: float = None
+    porosity: float = None
     composition: Dict[str, float] = None
     is_processed: bool = False

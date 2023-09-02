@@ -1,5 +1,6 @@
 import numpy as np
 from typing import List
+from moon_base.ground_sample import GroundSample
 from field_laboratory.lab_ground_sample import LabGroundSample
 
 
@@ -41,7 +42,7 @@ class FieldLaboratory:
     def calculate_density(self, sample: LabGroundSample):
         # Assume a constant mineral density of 3 g/cm^3
         mineral_density = 3
-        return (1 - porosity) * mineral_density
+        return (1 - sample.porosity) * mineral_density
 
     def calculate_volume(self, sample: LabGroundSample):
         # Assume the rock is a sphere and calculate the volume
@@ -49,24 +50,49 @@ class FieldLaboratory:
         sample.volume = volume
         return volume
 
-    def calculate_porosity(self, sample: GroundSample):
-        total_volume = np.random.uniform(1, 100)  # Total volume of the rock sample
-        grain_volume = np.random.uniform(1, total_volume)  # Volume of the grains
+    @staticmethod
+    def calculate_porosity(sample: LabGroundSample):
+        location = sample.location
+        _ = location[0] * location[1]
+        porosity = np.random.uniform(0, 0.03)
+        return porosity
 
-    def calculate_mass(self, sample: GroundSample):
-        # Convert density from g/cm^3 to kg/m^3 and volume from cm^3 to m^3
-        density_kg_m3 = self.density * 1000
-        volume_m3 = self.volume * 1e-6
-        return density_kg_m3 * volume_m3
+    def analyze_sample(self, sample: LabGroundSample):
+        """
+        Analyzes a ground sample and adds the results to the list of analysis results.
+        :param sample: The ground sample to be analyzed.
+        :return: The results of the analysis.
+        """
 
-    def calculate_force(self):
-        # Assume the rock is at the surface of the moon and calculate the gravitational force it would exert on a 1 kg object
-        G = 6.67430e-11  # gravitational constant in m^3 kg^-1 s^-2
-        mass_object = 1  # mass of the object in kg
-        distance = 1  # distance from the rock to the object in m
-        return G * (self.mass * mass_object) / distance**2
+        # Calculate the porosity of the sample
+        self.calculate_porosity(sample)
 
-    def analyze_sample(self, sample: GroundSample):
+        # Calculate the volume of the sample
+        self.calculate_volume(sample)
+
+        # Calculate the density of the sample
+        density = self.calculate_density(sample)
+        sample.density = density
+
+        # Add the analyzed sample to the list of analyzed samples
+        self.analyzed_samples.append(sample)
+
+        # Create the analysis results dictionary
+        analysis_results = {
+            'id': sample.sample_id,
+            'location': sample.location,
+            'weight': sample.weight,
+            'porosity': sample.porosity,
+            'volume': sample.volume,
+            'density': sample.density
+        }
+
+        # Add the analysis results to the list of analysis results
+        self.analysis_results.append(analysis_results)
+
+        return analysis_results
+
+    def analyze_samples(self, sample: GroundSample):
         mineral_compositions = [rock.mineral_composition for rock in sample]
         weights = [rock.weight for rock in sample]
         ages = [rock.age for rock in sample]
