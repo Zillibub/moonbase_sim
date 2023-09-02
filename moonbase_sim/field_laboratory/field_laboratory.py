@@ -1,6 +1,6 @@
 import numpy as np
 from typing import List
-from moon_base.ground_sample import GroundSample
+from field_laboratory.lab_ground_sample import LabGroundSample
 
 
 class FieldLaboratory:
@@ -13,7 +13,7 @@ class FieldLaboratory:
             self,
             field_lab_id: str,
             new_ground_samples: List[GroundSample] = None,
-            analyzed_samples: List[GroundSample] = None,
+            analyzed_samples: List[LabGroundSample] = None,
             analysis_results: List[dict] = None
     ):
         """
@@ -38,15 +38,20 @@ class FieldLaboratory:
         """
         self.new_ground_samples.append(sample)
 
-    def calculate_density(self, sample: GroundSample, porosity):
+    def calculate_density(self, sample: LabGroundSample):
         # Assume a constant mineral density of 3 g/cm^3
         mineral_density = 3
         return (1 - porosity) * mineral_density
 
-    def calculate_volume(self, sample: GroundSample):
+    def calculate_volume(self, sample: LabGroundSample):
         # Assume the rock is a sphere and calculate the volume
-        diameter = (self.weight / self.density)**(1/3)  # diameter in cm
-        return 4/3 * math.pi * (diameter/2)**3
+        volume = np.random.uniform(sample.weight / 3 * 0.8, sample.weight / 3 * 1.2)
+        sample.volume = volume
+        return volume
+
+    def calculate_porosity(self, sample: GroundSample):
+        total_volume = np.random.uniform(1, 100)  # Total volume of the rock sample
+        grain_volume = np.random.uniform(1, total_volume)  # Volume of the grains
 
     def calculate_mass(self, sample: GroundSample):
         # Convert density from g/cm^3 to kg/m^3 and volume from cm^3 to m^3
