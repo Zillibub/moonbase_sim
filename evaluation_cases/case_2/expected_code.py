@@ -1,5 +1,5 @@
-from moonbase_sim.sensor import Sensor, SensorMetadata
-from moonbase_sim.moonbase import MoonBase
+from moon_base.sensor import Sensor, SensorMetadata
+from moon_base.moonbase import MoonBase
 import random
 from datetime import datetime, timedelta
 

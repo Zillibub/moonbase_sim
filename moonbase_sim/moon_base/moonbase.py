@@ -1,9 +1,8 @@
 import json
 from typing import Tuple
-from moonbase_sim.sensor import Sensor
-from moonbase_sim.ground_sample import GroundSample
-from moonbase_sim.message import Message
-import pydoc
+from moon_base.sensor import Sensor
+from moon_base.ground_sample import GroundSample
+from moon_base.message import Message
 
 
 class MoonBase:

@@ -1,6 +1,6 @@
-from moonbase_sim.sensor import Sensor, SensorMetadata
-from moonbase_sim.moonbase import MoonBase
-from moonbase_sim.message import Message
+from moon_base.sensor import Sensor, SensorMetadata
+from moon_base.moonbase import MoonBase
+from moon_base.message import Message
 
 
 def main():
