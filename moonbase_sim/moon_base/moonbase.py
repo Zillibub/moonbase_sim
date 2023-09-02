@@ -97,7 +97,8 @@ class MoonBase:
         with open(filename, 'w') as f:
             json.dump(state, f, indent=4)
 
-    def load_state(self, filename):
+    @classmethod
+    def load_state(cls, filename):
         """
         Loads the state of the moon base from a file.
         :param filename:
@@ -105,8 +106,12 @@ class MoonBase:
         """
         with open(filename, 'r') as f:
             state = json.load(f)
-        self.sensors = [Sensor.from_json(sensor) for sensor in state['sensors']]
-        self._ground_samples = [GroundSample(**sample) for sample in state['ground_samples']]
-        self.message_log = [Message(**message) for message in state['message_log']]
-        self.is_landed = state['is_landed']
-        self.landing_location = state['landing_location'] if state['landing_location'] else None
+
+        moon_base = cls(state['moon_base_id'])
+        moon_base.sensors = [Sensor.from_json(sensor) for sensor in state['sensors']]
+        moon_base._ground_samples = [GroundSample(**sample) for sample in state['ground_samples']]
+        moon_base.message_log = [Message(**message) for message in state['message_log']]
+        moon_base.is_landed = state['is_landed']
+        moon_base.landing_location = state['landing_location'] if state['landing_location'] else None
+
+        return moon_base

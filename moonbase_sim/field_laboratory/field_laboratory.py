@@ -53,6 +53,7 @@ class FieldLaboratory:
     @staticmethod
     def calculate_porosity(sample: LabGroundSample):
         location = sample.location
+        # TODO think how to use location here
         _ = location[0] * location[1]
         porosity = np.random.uniform(0, 0.03)
         return porosity
