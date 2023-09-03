@@ -3,7 +3,7 @@ from moon_base.moonbase import MoonBase
 from moon_base.message import Message
 
 
-def main():
+def main(output_path: str = "expected_state.json"):
 
     # Load the moon base instance from initial_state.json file
     moonbase = MoonBase("BASE-001")
@@ -19,7 +19,7 @@ def main():
     # Send a message with a list of sensor ids to the earth
     message = Message(content=str(sensor_ids))
     moonbase.send_message(message)
-    moonbase.save_state("expected_state.json")
+    moonbase.save_state(output_path)
 
 
 if __name__ == "__main__":

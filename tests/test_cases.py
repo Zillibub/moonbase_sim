@@ -1,21 +1,11 @@
 import os
 import subprocess
 import pytest
+from evaluation_cases import cases
 
 
-def find_main_scripts(directory):
-    """Find all cases in the given directory."""
-    cases = []
-    
-    for root, dirs, files in os.walk(directory):
-        for directory in dirs:
-            if 'case' in directory:
-                cases.append(os.path.join(root, directory))
-    return cases
-
-
-@pytest.mark.parametrize('case_folder', find_main_scripts('evaluation_cases/'))
-def test_main_scripts(case_folder):
+@pytest.mark.parametrize('validate_cases', cases)
+def test_main_scripts(validate_cases):
     """Test that each main.py script runs successfully."""
     if "preparation.py" in os.listdir(case_folder):
         preparation_script = os.path.join(case_folder, 'preparation.py')

@@ -14,7 +14,7 @@ def random_date(start_date, end_date):
         seconds=random.randint(0, int((end_date - start_date).total_seconds())))
 
 
-def main():
+def main(output_path: str = "expected_state.json"):
     # Create 10 temperature sensors
     for i in range(1, 11):
         sensor = Sensor(
@@ -42,6 +42,8 @@ def main():
             )
         )
         moonbase.add_sensor(sensor)
+
+    moonbase.save_state(output_path)
 
 
 if __name__ == "__main__":

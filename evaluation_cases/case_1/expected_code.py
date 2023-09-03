@@ -3,7 +3,7 @@ from moon_base.moonbase import MoonBase
 from moon_base.message import Message
 
 
-def main():
+def main(output_path: str = "expected_state.json"):
     moonbase = MoonBase("BASE-001")
 
     sensor1 = Sensor(
@@ -31,6 +31,8 @@ def main():
 
     message = Message(content="Sensors added: Temperature Sensor, Magnetometer")
     moonbase.send_message(message)
+
+    moonbase.save_state(output_path)
 
 
 if __name__ == "__main__":

@@ -42,3 +42,14 @@ class Case:
             expected_state=expected_state,
             initial_state=initial_state,
         )
+
+    def evaluate(self, output_path: str):
+        if self.preparation_method:
+            self.preparation_method()
+
+        self.expected_method(output_path)
+
+        with open(output_path, 'r') as f:
+            state = json.load(f)
+
+        self.validation_method(state, self.expected_state)
