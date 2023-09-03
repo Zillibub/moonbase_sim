@@ -22,13 +22,23 @@ class Case:
             validation_method: Callable,
             prompt_path: str,
             expected_state_path: str,
+            preparation_method: Callable = None,
+            initial_state_path: str = None,
     ):
         prompt = Path(prompt_path).read_text()
         with open(expected_state_path, 'r') as f:
             expected_state = json.load(f)
+
+        initial_state = None
+        if initial_state_path:
+            with open(initial_state_path, 'r') as f:
+                initial_state = json.load(f)
+
         return cls(
             expected_method=expected_method,
             validation_method=validation_method,
+            preparation_method=preparation_method,
             prompt=prompt,
             expected_state=expected_state,
+            initial_state=initial_state,
         )
