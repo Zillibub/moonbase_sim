@@ -22,9 +22,11 @@ class Sensor:
         self.sensor_metadata = sensor_metadata
         self.data = data or []
 
-    def collect_data(self, value):
+    def collect_data(self, value: float):
         """
         Collects data from the sensor.
+        :param value:
+        :return:
         """
         self.data.append({
             'timestamp': datetime.datetime.now().isoformat(),
