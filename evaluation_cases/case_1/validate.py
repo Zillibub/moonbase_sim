@@ -13,4 +13,5 @@ def validate_state(state: dict, expected_state: dict):
     # Check message log
     assert len(state["message_log"]) == len(expected_state["message_log"]), "Number of messages doesn't match."
     for message, expected_message in zip(state["message_log"], expected_state["message_log"]):
-        assert message.content == expected_message["content"], "Message content doesn't match."
+        assert message["content"] == expected_message["content"], "Message content doesn't match."
+    pass

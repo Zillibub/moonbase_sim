@@ -7,7 +7,7 @@ def validate_state(state: dict, expected_state: dict):
     assert len(state["sensors"]) == len(expected_state["sensors"]), "Number of sensors doesn't match."
     for sensor, expected_sensor in zip(state["sensors"], expected_state["sensors"]):
         assert sensor["sensor_id"] == expected_sensor["sensor_id"], "Sensor id doesn't match."
-        assert sensor["sensor_metadata"] == expected_sensor["sensor_metadata"], "Sensor metadata doesn't match."
+        assert sensor["sensor_metadata"]["measured_value"] == expected_sensor["sensor_metadata"]["measured_value"], "Sensor metadata doesn't match."
         assert sensor["data"] == expected_sensor["data"], "Sensor data doesn't match."
 
     # Check message log

@@ -3,11 +3,6 @@ from moon_base.moonbase import MoonBase
 import random
 from datetime import datetime, timedelta
 
-moonbase = MoonBase("BASE-001")
-
-start_date = datetime(2021, 1, 1)
-end_date = datetime(2021, 12, 31)
-
 
 def random_date(start_date, end_date):
     return start_date + timedelta(
@@ -15,6 +10,12 @@ def random_date(start_date, end_date):
 
 
 def main(output_path: str = "expected_state.json"):
+
+    moonbase = MoonBase("BASE-001")
+
+    start_date = datetime(2021, 1, 1)
+    end_date = datetime(2021, 12, 31)
+
     # Create 10 temperature sensors
     for i in range(1, 11):
         sensor = Sensor(

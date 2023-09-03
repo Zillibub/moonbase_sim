@@ -6,8 +6,7 @@ from moon_base.message import Message
 def main(output_path: str = "expected_state.json"):
 
     # Load the moon base instance from initial_state.json file
-    moonbase = MoonBase("BASE-001")
-    moonbase.load_state("initial_state.json")
+    moonbase = MoonBase.load_state("initial_state.json")
 
     # Get a list of sensor ids which calibration date is more than 2021.06.01
     date_threshold = datetime.strptime("2021-06-01", "%Y-%m-%d")
