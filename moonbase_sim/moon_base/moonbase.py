@@ -10,6 +10,10 @@ class MoonBase:
     Class representing the moon base.
     """
     def __init__(self, moon_base_id: str):
+        """
+        Class representing the moon base.
+        :param moon_base_id: moon base id
+        """
         self.moon_base_id = moon_base_id
         self.sensors = []
         self._ground_samples = []
@@ -45,7 +49,7 @@ class MoonBase:
         """
         Collects a ground sample.
         :param sample:
-        ":raises: Exception if the moonbase has not landed
+        :raises: Exception if the moon base has not landed
         :return:
         """
         if not self.is_landed:
@@ -58,7 +62,7 @@ class MoonBase:
 
     def send_samples(self) -> List[GroundSample]:
         """
-        Sends the collected samples.
+        Sends all collected samples.
         :return:
         """
         samples = self._ground_samples
@@ -88,6 +92,7 @@ class MoonBase:
         :return:
         """
         state = {
+            'moon_base_id': self.moon_base_id,
             'sensors': [sensor.to_json() for sensor in self.sensors],
             'ground_samples': [sample.__dict__ for sample in self._ground_samples],
             'message_log': [message.__dict__ for message in self.message_log],

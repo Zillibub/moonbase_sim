@@ -1,4 +1,5 @@
 {
+    "moon_base_id": "BASE-001",
     "sensors": [
         {
             "sensor_id": "TEMP-001",
