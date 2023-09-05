@@ -5,7 +5,7 @@ from moon_base.ground_sample import GroundSample
 
 def main(output_path: str = "expected_state.json"):
 
-    with open("initial_state.json", "r") as f:
+    with open("evaluation_cases/case_5/initial_state.json", "r") as f:
         data = json.load(f)
 
     moon_bases = []

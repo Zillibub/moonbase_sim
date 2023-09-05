@@ -1,5 +1,7 @@
 {
     "moon_base_id": "BASE-001",
+    "is_landed": false,
+    "landing_location": null,
     "sensors": [
         {
             "sensor_id": "TEMP-001",

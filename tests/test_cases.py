@@ -1,5 +1,4 @@
 import os
-import subprocess
 import pytest
 from evaluation_cases import cases
 from evaluation_cases.case import Case

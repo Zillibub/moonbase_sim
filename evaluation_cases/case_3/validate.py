@@ -6,6 +6,4 @@ def validate_state(state: dict, expected_state: dict):
 
     # Check sensors
     assert len(state["sensors"]) == len(expected_state["sensors"]), "Number of sensors doesn't match."
-    for sensor in state["sensors"]:
-        datetime.strptime(sensor["sensor_metadata"]["calibration_date"], "%Y-%m-%d")
-        assert datetime.strptime(sensor["sensor_metadata"]["calibration_date"], "%Y-%m-%d") > date_threshold
+    assert expected_state['message_log'][-1]['content'] in state['message_log'][-1]['content'], "Message content doesn't match."
