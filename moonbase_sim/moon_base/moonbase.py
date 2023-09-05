@@ -36,7 +36,7 @@ class MoonBase:
 
         self.sensors.append(sensor)
 
-    def land(self, location: Tuple[int, int]):
+    def land(self, location: Tuple[float, float]):
         """
         Lands the moonbase at the specified location.
         :param location:
