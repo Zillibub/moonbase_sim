@@ -1,0 +1,7 @@
+Upload the json data from file inital_state.json. It's a list of moon base states
+
+Create a moon base object from each state in the list
+
+Collect 3 samples for each moon base where it is possible.
+
+Save all states to one file as a list of json states with path {}

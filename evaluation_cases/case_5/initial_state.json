@@ -1,0 +1,51 @@
+[
+    {
+        "moon_base_id": "BASE-000",
+        "sensors": [],
+        "ground_samples": [],
+        "message_log": [],
+        "is_landed": false,
+        "landing_location": ""
+    },
+    {
+        "moon_base_id": "BASE-001",
+        "sensors": [],
+        "ground_samples": [],
+        "message_log": [],
+        "is_landed": true,
+        "landing_location": [
+            90.05079840131292,
+            92.91359228383
+        ]
+    },
+    {
+        "moon_base_id": "BASE-002",
+        "sensors": [],
+        "ground_samples": [],
+        "message_log": [],
+        "is_landed": true,
+        "landing_location": [
+            81.75622948940276,
+            72.13849606202248
+        ]
+    },
+    {
+        "moon_base_id": "BASE-003",
+        "sensors": [],
+        "ground_samples": [],
+        "message_log": [],
+        "is_landed": false,
+        "landing_location": ""
+    },
+    {
+        "moon_base_id": "BASE-004",
+        "sensors": [],
+        "ground_samples": [],
+        "message_log": [],
+        "is_landed": true,
+        "landing_location": [
+            76.84690645339438,
+            91.4314842172155
+        ]
+    }
+]

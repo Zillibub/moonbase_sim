@@ -91,16 +91,8 @@ class MoonBase:
         :param filename:
         :return:
         """
-        state = {
-            'moon_base_id': self.moon_base_id,
-            'sensors': [sensor.to_json() for sensor in self.sensors],
-            'ground_samples': [sample.__dict__ for sample in self._ground_samples],
-            'message_log': [message.__dict__ for message in self.message_log],
-            'is_landed': self.is_landed,
-            'landing_location': self.landing_location if self.landing_location else ''
-        }
         with open(filename, 'w') as f:
-            json.dump(state, f, indent=4)
+            json.dump(self.to_json(), f, indent=4)
 
     @classmethod
     def load_state(cls, filename):
@@ -111,7 +103,24 @@ class MoonBase:
         """
         with open(filename, 'r') as f:
             state = json.load(f)
+        return cls.from_json(state)
 
+    def to_json(self):
+        """
+        Returns the state of the moon base as a json object.
+        :return:
+        """
+        return {
+            'moon_base_id': self.moon_base_id,
+            'sensors': [sensor.to_json() for sensor in self.sensors],
+            'ground_samples': [sample.__dict__ for sample in self._ground_samples],
+            'message_log': [message.__dict__ for message in self.message_log],
+            'is_landed': self.is_landed,
+            'landing_location': self.landing_location if self.landing_location else ''
+        }
+
+    @classmethod
+    def from_json(cls, state):
         moon_base = cls(state['moon_base_id'])
         moon_base.sensors = [Sensor.from_json(sensor) for sensor in state['sensors']]
         moon_base._ground_samples = [GroundSample(**sample) for sample in state['ground_samples']]
@@ -120,3 +129,4 @@ class MoonBase:
         moon_base.landing_location = state['landing_location'] if state['landing_location'] else None
 
         return moon_base
+

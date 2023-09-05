@@ -1,0 +1,81 @@
+[
+    {
+        "moon_base_id": "BASE-000",
+        "sensors": [],
+        "ground_samples": [],
+        "message_log": [],
+        "is_landed": false,
+        "landing_location": ""
+    },
+    {
+        "moon_base_id": "BASE-001",
+        "sensors": [],
+        "ground_samples": [
+            {
+                "sample_id": "933f0595-81c0-40df-a5e0-fb415638fd23",
+                "location": [
+                    62.480124957006865,
+                    37.46391794789713
+                ],
+                "weight": 0.12317685326015748,
+                "collected_at": "2023-09-05T22:02:17.631746"
+            }
+        ],
+        "message_log": [],
+        "is_landed": true,
+        "landing_location": [
+            90.05079840131292,
+            92.91359228383
+        ]
+    },
+    {
+        "moon_base_id": "BASE-002",
+        "sensors": [],
+        "ground_samples": [
+            {
+                "sample_id": "eaf81f8f-6c0f-4a6a-9e6e-174341dbbeeb",
+                "location": [
+                    58.62859091979274,
+                    48.687654818793405
+                ],
+                "weight": 0.9270144142678246,
+                "collected_at": "2023-09-05T22:02:17.631746"
+            }
+        ],
+        "message_log": [],
+        "is_landed": true,
+        "landing_location": [
+            81.75622948940276,
+            72.13849606202248
+        ]
+    },
+    {
+        "moon_base_id": "BASE-003",
+        "sensors": [],
+        "ground_samples": [],
+        "message_log": [],
+        "is_landed": false,
+        "landing_location": ""
+    },
+    {
+        "moon_base_id": "BASE-004",
+        "sensors": [],
+        "ground_samples": [
+            {
+                "sample_id": "9dd21816-6ee3-463e-b9a8-66ac442211d1",
+                "location": [
+                    44.08652207912716,
+                    52.18080421304842
+                ],
+                "weight": 0.8000910435692039,
+                "collected_at": "2023-09-05T22:02:17.631746"
+            }
+        ],
+        "message_log": [],
+        "is_landed": true,
+        "landing_location": [
+            76.84690645339438,
+            91.4314842172155
+        ]
+    }
+]
