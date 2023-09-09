@@ -1,6 +1,6 @@
 import json
 import numpy as np
-from moon_base.moonbase import MoonBase
+from moon_base.moon_base import MoonBase
 
 
 def main():

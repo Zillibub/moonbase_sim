@@ -1,5 +1,5 @@
 from moon_base.sensor import Sensor, SensorMetadata
-from moon_base.moonbase import MoonBase
+from moon_base.moon_base import MoonBase
 from moon_base.message import Message
 
 

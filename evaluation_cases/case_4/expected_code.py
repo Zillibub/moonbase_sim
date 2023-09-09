@@ -1,6 +1,6 @@
 import numpy as np
 from moon_base.ground_sample import GroundSample
-from moon_base.moonbase import MoonBase
+from moon_base.moon_base import MoonBase
 
 
 def main(output_path: str = "expected_state.json"):

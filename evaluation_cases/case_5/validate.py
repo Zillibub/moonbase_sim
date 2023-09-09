@@ -1,4 +1,4 @@
-from moon_base.moonbase import MoonBase
+from moon_base.moon_base import MoonBase
 
 
 def validate_state(state: dict, expected_state: dict):
