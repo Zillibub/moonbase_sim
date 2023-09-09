@@ -4,4 +4,4 @@ Land it to the random coordinates on the moon.
 
 Collect 10 ground samples with it. The samples must be created using the create_random method
 
-After that, save the moon base to a file with path {}
+After that, save the moon base to a file with path {output_path}

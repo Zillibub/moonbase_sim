@@ -4,4 +4,4 @@ Create a moon base object from each state in the list
 
 Collect 3 samples for each moon base where it is possible.
 
-Save all states to one file as a list of json states with path {}
+Save all states to one file as a list of json states with path {output_path}

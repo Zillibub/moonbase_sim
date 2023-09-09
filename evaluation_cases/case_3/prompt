@@ -1,5 +1,5 @@
-Create the moon base instance from initial_state.json file
+Create the moon base instance from {case_folder}initial_state.json file
 Get a list of signals ids which calibration date is more that 2021.06.01
 Send a message with a list of signals ids to the earth
 
-After that, save the moon base to a file with path {}
+After that, save the moon base to a file with path {output_path}
