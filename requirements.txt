@@ -1,3 +1,6 @@
-pydantic==2.3.0
-pytest
-numpy
+pytest==7.4.2
+numpy==1.24
+openai==0.28.0
+pydantic
+# git+https://github.com/huggingface/transformers.git@main accelerate
+
