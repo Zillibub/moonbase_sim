@@ -27,6 +27,5 @@ class GPTEvaluator(BaseEvaluator):
         self.save_code(
             sequence=completion,
             output_path=self.output_path,
-            path_setup_code="""import sys \nsys.path.append('../moonbase_sim/moonbase_sim/')\n""",
             code_stopwords=("```python", "```")
         )

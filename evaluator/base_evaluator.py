@@ -23,11 +23,10 @@ class BaseEvaluator:
         self.codebase_path = codebase_path
         self.case_id = case_id
 
-    @staticmethod
     def save_code(
+            self,
             sequence: str,
             output_path: Path,
-            path_setup_code: str,
             code_stopwords: Tuple[str, str]
     ):
         # Find the text between [PYTHON] and [/PYTHON]
@@ -40,7 +39,7 @@ class BaseEvaluator:
         if not search_result:
             raise ValueError("No code found")
         code = search_result.group(1)
-        code = path_setup_code + code
+        code = f"""import sys \nsys.path.append('{self.codebase_path}')\n""" + code
         # Save the code into a file
         with open(output_path, 'w') as f:
             f.write(code)
