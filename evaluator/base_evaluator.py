@@ -3,11 +3,12 @@ import subprocess
 import threading
 import queue
 import importlib
+from abc import abstractmethod
 from pathlib import Path
 from typing import Tuple
 
 
-class Evaluator:
+class BaseEvaluator:
 
     def __init__(
             self,
@@ -40,6 +41,19 @@ class Evaluator:
         # Save the code into a file
         with open(output_path, 'w') as f:
             f.write(code)
+
+    def load_prompt(self):
+        with open(self.evaluation_cases_path / f"case_{self.case_id}" / "prompt", 'r') as f:
+            prompt = f.read()
+        prompt = prompt.format(
+            case_folder=str(self.evaluation_cases_path),
+            output_path=str(self.output_path)
+        )
+        return prompt
+
+    @abstractmethod
+    def generate_code(self):
+        raise NotImplementedError()
 
     @staticmethod
     def execute_code(executable_path: Path):
